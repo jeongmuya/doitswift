@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     let MAX_ARRAY_NUM = 10
-    let PICKER_VIEW_COLUMN = 1
+    let PICKER_VIEW_COLUMN = 2
     let PICKER_VIEW_HEIGHT:CGFloat = 80
     var imageArray = [UIImage?]()
     var imageFileName = [ "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"]
@@ -19,6 +19,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet var lblImageFileName: UILabel!
     
     @IBOutlet var imageView: UIImageView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,17 +39,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return PICKER_VIEW_COLUMN
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInCOmponent component: Int) -> Int {
-        return imageFileName.count
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return PICKER_VIEW_HEIGHT
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return imageFileName.count
     }
     
-//    func pickerView(_ pickeerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return imageFileName[row]
-//    }
+    //    func pickerView(_ pickeerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    //        return imageFileName[row]
+    //    }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let imageView = UIImageView(image:imageArray[row])
@@ -57,8 +59,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        lblImageFileName.text = imageFileName[row]
-        imageView.image = imageArray[row]
+        if (component == 0) {
+            lblImageFileName.text = imageFileName[row]
+        } else {
+            imageView.image = imageArray[row]
+        }
     }
-
 }

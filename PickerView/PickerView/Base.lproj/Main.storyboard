@@ -35,7 +35,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7aN-g2-zU7">
-                                <rect key="frame" x="0.0" y="104" width="402" height="162"/>
+                                <rect key="frame" x="16" y="100" width="370" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="16D-86-5eM"/>
@@ -46,8 +46,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="dLg-5T-9Ft" id="twf-qC-GKe"/>
-                        <outlet property="lblImageFileName" destination="8eU-Kz-WHU" id="J1j-XX-WBb"/>
+                        <outlet property="imageView" destination="dLg-5T-9Ft" id="qwg-VO-Rs0"/>
+                        <outlet property="lblImageFileName" destination="8eU-Kz-WHU" id="K0I-Fq-npJ"/>
                         <outlet property="pickerImage" destination="7aN-g2-zU7" id="sa3-ik-8gw"/>
                     </connections>
                 </viewController>
